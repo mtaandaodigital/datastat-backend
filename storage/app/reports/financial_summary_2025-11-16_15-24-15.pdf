@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Summary Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .header { border-bottom: 3px solid #007bff; padding-bottom: 15px; margin-bottom: 20px; }
+        h1 { color: #007bff; font-size: 28px; margin-bottom: 5px; }
+        .period { color: #666; font-size: 14px; }
+        .generated-date { text-align: right; color: #999; font-size: 12px; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        th { background-color: #007bff; color: white; padding: 12px; text-align: left; }
+        td { padding: 10px 12px; border-bottom: 1px solid #ddd; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .summary-box { background: #f0f4ff; padding: 15px; border-left: 4px solid #007bff; }
+        .summary-label { font-size: 12px; color: #666; text-transform: uppercase; }
+        .summary-value { font-size: 24px; font-weight: bold; color: #007bff; margin-top: 5px; }
+        .section-title { background-color: #e8f0ff; padding: 10px 12px; font-weight: bold; color: #007bff; margin-top: 20px; margin-bottom: 10px; }
+        @media print { 
+            body { padding: 0; } 
+            .container { max-width: 100%; }
+            table { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Financial Summary Report</h1>
+            <div class="period">2025-01-01 to 2025-11-16</div>
+        </div>
+        <div class="generated-date">Generated: 2025-11-16 15:24:15</div>
+<div class="summary"><div class="summary-box">
+                    <div class="summary-label">total registrations</div>
+                    <div class="summary-value">0</div>
+                </div></div><div class="summary"><div class="summary-box">
+                    <div class="summary-label">total amount</div>
+                    <div class="summary-value">0</div>
+                </div></div><div class="summary"><div class="summary-box">
+                    <div class="summary-label">average amount per registrant</div>
+                    <div class="summary-value"></div>
+                </div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,332 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for your admin panel - High Contrast Lavender & Blue Palette */
+:root {
+    /* Primary - Lavender to Purple with high contrast */
+    --primary-50: rgb(248 247 255);   /* Very light lavender */
+    --primary-100: rgb(240 237 255);  /* Light lavender */
+    --primary-200: rgb(230 230 250);  /* Lavender tint */
+    --primary-300: rgb(216 208 255);  /* Medium lavender */
+    --primary-400: rgb(196 181 253);  /* Darker lavender */
+    --primary-500: rgb(147 112 219);  /* Royal blue tint (main) */
+    --primary-600: rgb(124 58 237);   /* Darker purple */
+    --primary-700: rgb(109 40 217);   /* Deep purple */
+    --primary-800: rgb(91 33 183);    /* Very deep purple */
+    --primary-900: rgb(76 29 149);    /* Dark purple */
+    --primary-950: rgb(46 16 101);    /* Darkest purple */
+    
+    /* Secondary - Dodger Blue with high contrast */
+    --secondary-50: rgb(240 249 255);   /* Very light blue */
+    --secondary-100: rgb(224 242 254);  /* Light blue */
+    --secondary-200: rgb(186 230 253);  /* Light dodger blue */
+    --secondary-300: rgb(135 206 235);  /* Dodger blue tint (main) */
+    --secondary-400: rgb(56 189 248);   /* Medium blue */
+    --secondary-500: rgb(14 165 233);   /* Dodger blue */
+    --secondary-600: rgb(2 132 199);    /* Darker blue */
+    --secondary-700: rgb(3 105 161);    /* Deep blue */
+    --secondary-800: rgb(7 89 133);     /* Very deep blue */
+    --secondary-900: rgb(12 74 110);    /* Dark blue */
+    --secondary-950: rgb(8 47 73);      /* Darkest blue */
+}
+
+/* Filament specific customizations */
+.fi-sidebar {
+    background-color: #4C1D95;
+    color: #FFFFFF;
+}
+
+.fi-sidebar .fi-sidebar-nav-item {
+    color: #E6E6FA;
+}
+
+.fi-sidebar .fi-sidebar-nav-item:hover {
+    background-color: #5B21B7;
+    color: #FFFFFF;
+}
+
+.fi-sidebar .fi-sidebar-nav-item.fi-active {
+    background-color: #7C3AED;
+    color: #FFFFFF;
+}
+
+.fi-topbar {
+    border-bottom: 1px solid rgb(229 231 235);
+    background-color: #FFFFFF;
+    color: #262626;
+}
+
+.fi-main-ctn {
+    background-color: #FAFAFA;
+    color: #262626;
+}
+
+/* Ensure good contrast for buttons and interactive elements */
+.fi-btn-primary,
+.fi-btn[data-color="primary"],
+button[type="submit"],
+.fi-ac-btn-action[data-color="primary"] {
+    background-color: #4C1D95 !important;
+    color: #FFFFFF !important;
+    border-color: #4C1D95 !important;
+}
+
+.fi-btn-primary:hover,
+.fi-btn[data-color="primary"]:hover,
+button[type="submit"]:hover,
+.fi-ac-btn-action[data-color="primary"]:hover {
+    background-color: #5B21B7 !important;
+    border-color: #5B21B7 !important;
+}
+
+.fi-btn-secondary,
+.fi-btn[data-color="secondary"],
+.fi-ac-btn-action[data-color="secondary"] {
+    background-color: #0284C7 !important;
+    color: #FFFFFF !important;
+    border-color: #0284C7 !important;
+}
+
+.fi-btn-secondary:hover,
+.fi-btn[data-color="secondary"]:hover,
+.fi-ac-btn-action[data-color="secondary"]:hover {
+    background-color: #0369A1 !important;
+    border-color: #0369A1 !important;
+}
+
+/* Save Changes and similar action buttons */
+.fi-btn[data-color="success"],
+.fi-ac-btn-action[data-color="success"],
+.fi-btn-success {
+    background-color: #9370DB !important;
+    color: #FFFFFF !important;
+    border-color: #9370DB !important;
+}
+
+.fi-btn[data-color="success"]:hover,
+.fi-ac-btn-action[data-color="success"]:hover,
+.fi-btn-success:hover {
+    background-color: #7C3AED !important;
+    border-color: #7C3AED !important;
+}
+
+/* Info buttons */
+.fi-btn[data-color="info"],
+.fi-ac-btn-action[data-color="info"],
+.fi-btn-info {
+    background-color: #87CEEB !important;
+    color: #262626 !important;
+    border-color: #87CEEB !important;
+}
+
+.fi-btn[data-color="info"]:hover,
+.fi-ac-btn-action[data-color="info"]:hover,
+.fi-btn-info:hover {
+    background-color: #0284C7 !important;
+    color: #FFFFFF !important;
+    border-color: #0284C7 !important;
+}
+
+/* Cancel and outline buttons */
+.fi-btn-outlined,
+.fi-btn[data-variant="outlined"] {
+    background-color: transparent !important;
+    color: #4C1D95 !important;
+    border-color: #4C1D95 !important;
+}
+
+.fi-btn-outlined:hover,
+.fi-btn[data-variant="outlined"]:hover {
+    background-color: #F8F7FF !important;
+    color: #4C1D95 !important;
+    border-color: #5B21B7 !important;
+}
+
+/* Generic button styling for any missed buttons */
+.fi-btn:not([data-color]):not(.fi-btn-outlined):not([data-variant="outlined"]) {
+    background-color: #4C1D95 !important;
+    color: #FFFFFF !important;
+    border-color: #4C1D95 !important;
+}
+
+.fi-btn:not([data-color]):not(.fi-btn-outlined):not([data-variant="outlined"]):hover {
+    background-color: #5B21B7 !important;
+    border-color: #5B21B7 !important;
+}
+
+/* Form elements with good contrast */
+.fi-input {
+    background-color: #FFFFFF !important;
+    color: #262626 !important;
+    border-color: #D4D4D4 !important;
+}
+
+.fi-input:focus {
+    border-color: #9370DB !important;
+    box-shadow: 0 0 0 1px #9370DB !important;
+}
+
+/* Cards and panels */
+.fi-section {
+    background-color: #FFFFFF !important;
+    color: #262626 !important;
+}
+
+/* Tables */
+.fi-ta-table {
+    background-color: #FFFFFF !important;
+}
+
+.fi-ta-row:hover {
+    background-color: #F8F7FF !important;
+}
+
+/* Limit height for Filament RichEditor fields when editing course intro/body */
+/* Target known editor content containers to ensure scroll works across Filament/Tiptap versions.
+   Support both ancestor and self class application for resilience to DOM structure changes. */
+.fi-editor-scroll .fi-fo-rich-editor,
+.fi-fo-rich-editor.fi-editor-scroll,
+.fi-editor-scroll .tiptap-editor,
+.tiptap-editor.fi-editor-scroll,
+.fi-editor-scroll .ProseMirror,
+.ProseMirror.fi-editor-scroll {
+    max-height: 20rem !important; /* ~320px */
+    overflow-y: auto !important;
+}
+
+/* Do NOT constrain the outer wrapper to avoid cutting toolbars */
+/* .fi-editor-scroll { max-height: 20rem; overflow-y: auto; } */
+
+/* Navigation items with better contrast */
+.fi-sidebar-nav-item-label {
+    color: #E6E6FA !important;
+}
+
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-item-label {
+    color: #FFFFFF !important;
+}
+
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-item-label {
+    color: #FFFFFF !important;
+    font-weight: 600;
+}
+
+/* Form action buttons (Create, Edit, Save, etc.) */
+.fi-form-actions .fi-btn,
+.fi-form .fi-btn,
+.fi-resource-form .fi-btn {
+    background-color: #4C1D95 !important;
+    color: #FFFFFF !important;
+    border-color: #4C1D95 !important;
+}
+
+.fi-form-actions .fi-btn:hover,
+.fi-form .fi-btn:hover,
+.fi-resource-form .fi-btn:hover {
+    background-color: #5B21B7 !important;
+    border-color: #5B21B7 !important;
+}
+
+/* Table action buttons */
+.fi-ta-actions .fi-btn,
+.fi-ta-action,
+.fi-table-action {
+    background-color: #87CEEB !important;
+    color: #262626 !important;
+    border-color: #87CEEB !important;
+}
+
+.fi-ta-actions .fi-btn:hover,
+.fi-ta-action:hover,
+.fi-table-action:hover {
+    background-color: #0284C7 !important;
+    color: #FFFFFF !important;
+    border-color: #0284C7 !important;
+}
+
+/* Header actions (Create new, etc.) */
+.fi-header-actions .fi-btn {
+    background-color: #9370DB !important;
+    color: #FFFFFF !important;
+    border-color: #9370DB !important;
+}
+
+.fi-header-actions .fi-btn:hover {
+    background-color: #7C3AED !important;
+    border-color: #7C3AED !important;
+}
+
+/* Bulk actions */
+.fi-ta-bulk-actions .fi-btn {
+    background-color: #0284C7 !important;
+    color: #FFFFFF !important;
+    border-color: #0284C7 !important;
+}
+
+.fi-ta-bulk-actions .fi-btn:hover {
+    background-color: #0369A1 !important;
+    border-color: #0369A1 !important;
+}
+
+/* Modal and slide-over action buttons */
+.fi-modal-actions .fi-btn,
+.fi-slide-over-actions .fi-btn {
+    background-color: #4C1D95 !important;
+    color: #FFFFFF !important;
+    border-color: #4C1D95 !important;
+}
+
+.fi-modal-actions .fi-btn:hover,
+.fi-slide-over-actions .fi-btn:hover {
+    background-color: #5B21B7 !important;
+    border-color: #5B21B7 !important;
+}
+
+/* Additional button selectors for comprehensive coverage */
+button[class*="fi-btn"],
+.filament-button,
+[role="button"][class*="fi-"] {
+    background-color: #4C1D95 !important;
+    color: #FFFFFF !important;
+    border-color: #4C1D95 !important;
+}
+
+button[class*="fi-btn"]:hover,
+.filament-button:hover,
+[role="button"][class*="fi-"]:hover {
+    background-color: #5B21B7 !important;
+    border-color: #5B21B7 !important;
+}
+
+/* Danger/Delete buttons */
+.fi-btn[data-color="danger"],
+.fi-ac-btn-action[data-color="danger"],
+.fi-btn-danger {
+    background-color: #DC2626 !important;
+    color: #FFFFFF !important;
+    border-color: #DC2626 !important;
+}
+
+.fi-btn[data-color="danger"]:hover,
+.fi-ac-btn-action[data-color="danger"]:hover,
+.fi-btn-danger:hover {
+    background-color: #B91C1C !important;
+    border-color: #B91C1C !important;
+}
+
+/* Warning buttons */
+.fi-btn[data-color="warning"],
+.fi-ac-btn-action[data-color="warning"],
+.fi-btn-warning {
+    background-color: #D97706 !important;
+    color: #FFFFFF !important;
+    border-color: #D97706 !important;
+}
+
+.fi-btn[data-color="warning"]:hover,
+.fi-ac-btn-action[data-color="warning"]:hover,
+.fi-btn-warning:hover {
+    background-color: #B45309 !important;
+    border-color: #B45309 !important;
+}

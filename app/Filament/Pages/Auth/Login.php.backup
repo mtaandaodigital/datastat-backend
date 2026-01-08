@@ -1,0 +1,49 @@
+<?php
+
+namespace App\Filament\Pages\Auth;
+
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
+use Filament\Pages\Auth\Login as BaseLogin;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
+
+class Login extends BaseLogin
+{
+    public function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+                TextInput::make('email')
+                    ->label('Email')
+                    ->email()
+                    ->required()
+                    ->autocomplete()
+                    ->autofocus()
+                    ->extraInputAttributes(['tabindex' => 1]),
+                TextInput::make('password')
+                    ->label('Password')
+                    ->password()
+                    ->required()
+                    ->extraInputAttributes(['tabindex' => 2]),
+            ]);
+    }
+
+    public function authenticate(): ?\Filament\Http\Responses\Auth\Contracts\LoginResponse
+    {
+        $data = $this->form->getState();
+
+        if (!Auth::attempt([
+            'email' => $data['email'],
+            'password' => $data['password'],
+        ], true)) {
+            throw ValidationException::withMessages([
+                'data.email' => __('filament-panels::pages/auth/login.messages.failed'),
+            ]);
+        }
+
+        session()->regenerate();
+        
+        return app(\Filament\Http\Responses\Auth\Contracts\LoginResponse::class);
+    }
+}

@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+
+# Composer vendor
+vendor/
+
+# Laravel specific
+/bootstrap/cache/
+/storage/
+/public/storage/
+
+# Environment files
+.env
+.env.*
+
+# Editor directories
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
