@@ -14,6 +14,7 @@ use Filament\Infolists;
 use Filament\Infolists\Infolist;
 use Filament\Infolists\Components;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Collection;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteBulkAction;
 
@@ -434,6 +435,21 @@ class CourseResource extends Resource
                         ->color('danger')
                         ->action(function ($records) {
                             $records->each(fn($record) => $record->update(['schedule_status' => false]));
+                        }),
+
+                    Tables\Actions\BulkAction::make('editCategory')
+                        ->label('Change Category')
+                        ->icon('heroicon-o-pencil-square')
+                        ->color('info')
+                        ->form([
+                            Forms\Components\Select::make('category')
+                                ->label('Category')
+                                ->options(fn() => \App\Models\Category::pluck('category_name', 'category_name')->toArray())
+                                ->required()
+                                ->placeholder('Select a category'),
+                        ])
+                        ->action(function (Collection $records, array $data): void {
+                            $records->each(fn($record) => $record->update(['category' => $data['category']]));
                         }),
                 ]),
             ])

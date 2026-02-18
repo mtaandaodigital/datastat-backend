@@ -48,17 +48,18 @@ class GenerateSchedules extends Page implements HasTable, HasForms
     protected function getDefaultTowns(): array
     {
         return [
-            // Added Nairobi with requested pricing
-            ['location' => 'Nairobi', 'price_usd_5days' => 1100, 'price_ksh_5days' => 90000, 'price_usd_10days' => 2200, 'price_ksh_10days' => 180000, 'enabled' => true],
+            // Nairobi pricing
+            ['location' => 'Nairobi', 'price_usd_5days' => 1500, 'price_ksh_5days' => 110000, 'price_usd_10days' => 3000, 'price_ksh_10days' => 220000, 'enabled' => true],
 
-            ['location' => 'Kigali', 'price_usd_5days' => 3000, 'price_ksh_5days' => 90000, 'price_usd_10days' => 6000, 'price_ksh_10days' => 180000, 'enabled' => true],
-            ['location' => 'Dubai', 'price_usd_5days' => 4500, 'price_ksh_5days' => 90000, 'price_usd_10days' => 9000, 'price_ksh_10days' => 180000, 'enabled' => true],
-            ['location' => 'Cape Town', 'price_usd_5days' => 3000, 'price_ksh_5days' => 90000, 'price_usd_10days' => 6000, 'price_ksh_10days' => 180000, 'enabled' => true],
-            ['location' => 'Addis Ababa', 'price_usd_5days' => 3000, 'price_ksh_5days' => 90000, 'price_usd_10days' => 6000, 'price_ksh_10days' => 180000, 'enabled' => true],
-            ['location' => 'Singapore', 'price_usd_5days' => 4500, 'price_ksh_5days' => 90000, 'price_usd_10days' => 9000, 'price_ksh_10days' => 180000, 'enabled' => true],
-            ['location' => 'Istanbul', 'price_usd_5days' => 4500, 'price_ksh_5days' => 90000, 'price_usd_10days' => 9000, 'price_ksh_10days' => 180000, 'enabled' => true],
-            ['location' => 'Bangkok', 'price_usd_5days' => 4500, 'price_ksh_5days' => 90000, 'price_usd_10days' => 9000, 'price_ksh_10days' => 180000, 'enabled' => true],
-            ['location' => 'Accra', 'price_usd_5days' => 3000, 'price_ksh_5days' => 90000, 'price_usd_10days' => 6000, 'price_ksh_10days' => 180000, 'enabled' => true],
+            // International locations
+            ['location' => 'Kigali', 'price_usd_5days' => 3000, 'price_ksh_5days' => 110000, 'price_usd_10days' => 6000, 'price_ksh_10days' => 220000, 'enabled' => true],
+            ['location' => 'Dubai', 'price_usd_5days' => 5000, 'price_ksh_5days' => 110000, 'price_usd_10days' => 10000, 'price_ksh_10days' => 220000, 'enabled' => true],
+            ['location' => 'Cape Town', 'price_usd_5days' => 4500, 'price_ksh_5days' => 110000, 'price_usd_10days' => 9000, 'price_ksh_10days' => 220000, 'enabled' => true],
+            ['location' => 'Addis Ababa', 'price_usd_5days' => 3000, 'price_ksh_5days' => 110000, 'price_usd_10days' => 6000, 'price_ksh_10days' => 220000, 'enabled' => true],
+            ['location' => 'Singapore', 'price_usd_5days' => 5000, 'price_ksh_5days' => 110000, 'price_usd_10days' => 10000, 'price_ksh_10days' => 220000, 'enabled' => true],
+            ['location' => 'Istanbul', 'price_usd_5days' => 5000, 'price_ksh_5days' => 110000, 'price_usd_10days' => 10000, 'price_ksh_10days' => 220000, 'enabled' => true],
+            ['location' => 'Bangkok', 'price_usd_5days' => 5000, 'price_ksh_5days' => 110000, 'price_usd_10days' => 10000, 'price_ksh_10days' => 220000, 'enabled' => true],
+            ['location' => 'Accra', 'price_usd_5days' => 4000, 'price_ksh_5days' => 110000, 'price_usd_10days' => 8000, 'price_ksh_10days' => 220000, 'enabled' => true],
         ];
     }
 
