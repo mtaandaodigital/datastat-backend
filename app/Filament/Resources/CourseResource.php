@@ -69,7 +69,7 @@ class CourseResource extends Resource
                                         ->required()
                                         ->extraAttributes(['class' => 'fi-editor-scroll'])
                                         ->toolbarButtons([
-                                            'attachFiles','blockquote','bold','bulletList','codeBlock','h2','h3','italic','link','orderedList','redo','strike','underline','undo'
+                                            'attachFiles','blockquote','bold','bulletList','codeBlock','h2','h3','italic','link','orderedList','redo','strike','underline','undo','alignLeft','alignCenter','alignRight','alignJustify'
                                         ])
                                         ->helperText('Detailed course content and curriculum'),
 
