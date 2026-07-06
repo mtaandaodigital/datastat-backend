@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ExportController;
+use App\Http\Controllers\Admin\CoursePdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/export/news', [ExportController::class, 'exportNews'])->name('export.news');
     Route::get('/export/registrants', [ExportController::class, 'exportRegistrants'])->name('export.registrants');
     Route::get('/export/trainers', [ExportController::class, 'exportTrainers'])->name('export.trainers');
+    // Course PDF download (admin view)
+    Route::get('/admin/courses/{course}/pdf', [CoursePdfController::class, 'download'])->name('admin.courses.pdf');
 });
 
 // CSV Import routes
