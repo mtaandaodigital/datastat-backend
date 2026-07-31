@@ -20,7 +20,7 @@ $PHP83_BIN_CANDIDATES = [
 ];
 
 // Default credentials to test (can be overridden via GET)
-$DEFAULT_EMAIL = 'info@datastatresearch.org';
+$DEFAULT_EMAIL = 'info@datastatresearch.com';
 $DEFAULT_PASSWORD = 'D@t@2025';
 
 // Optional simple protection token: set a value here, then call with ?token=the-same

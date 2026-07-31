@@ -22,7 +22,7 @@
     <div class="page">
     <div class="header">
         <div class="logo">
-            <img src="{{ public_path('images/logo.png') ? asset('images/logo.png') : 'https://datastatresearch.org/images/logo.png' }}" alt="{{ $contact['site_name'] }}" style="max-width:120px">
+            <img src="{{ public_path('images/logo.png') ? asset('images/logo.png') : 'https://datastatresearch.com/images/logo.png' }}" alt="{{ $contact['site_name'] }}" style="max-width:120px">
         </div>
         <div>
             <div class="title">{{ $course->title }}</div>

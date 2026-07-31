@@ -89,11 +89,11 @@
         <div class="footer">
             <p><strong>Datastat Institute</strong></p>
             <p>
-                Email: <a href="mailto:info@datastatresearch.org">info@datastatresearch.org</a> | 
+                Email: <a href="mailto:info@datastatresearch.com">info@datastatresearch.com</a> | 
                 Phone: +254 724 527 104
             </p>
             <p>
-                Website: <a href="https://www.datastatresearch.org">www.datastatresearch.org</a>
+                Website: <a href="https://www.datastatresearch.com">www.datastatresearch.com</a>
             </p>
             <p style="margin-top: 20px; color: #999;">
                 © {{ now()->year }} Datastat Institute. All rights reserved.

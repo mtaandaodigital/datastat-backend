@@ -136,7 +136,7 @@ class CourseResource extends Resource
                                                     
                                                     return $slug . '-by-datastat-training-institute.' . $ext;
                                                 })
-                                                ->helperText('Upload a course image (recommended: 800x450px, max 400KB). Image will be saved to datastatresearch.org/images/courses directory.'),
+                                                ->helperText('Upload a course image (recommended: 800x450px, max 400KB). Image will be saved to datastatresearch.com/images/courses directory.'),
                                         ]),
                                 ]),
 
@@ -307,7 +307,7 @@ class CourseResource extends Resource
                     ->label('Image')
                     ->size(80)
                     ->height(45) // 16:9 aspect ratio
-                    ->defaultImageUrl('https://datastatresearch.org/login/images/default-course.jpg'),
+                    ->defaultImageUrl('https://datastatresearch.com/login/images/default-course.jpg'),
 
                 Tables\Columns\TextColumn::make('title')
                     ->label('Course Title')

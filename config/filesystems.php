@@ -36,7 +36,7 @@ return [
         'main_site_uploads' => [
             'driver' => 'local',
             'root' => '/home/datasta/website/public/images/courses',
-            'url' => 'https://datastatresearch.org/images/courses',
+            'url' => 'https://datastatresearch.com/images/courses',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -45,7 +45,7 @@ return [
         'main_site_category' => [
             'driver' => 'local',
             'root' => '/home/datasta/website/public/images/category',
-            'url' => 'https://datastatresearch.org/images/category',
+            'url' => 'https://datastatresearch.com/images/category',
             'visibility' => 'public',
             'throw' => false,
         ],

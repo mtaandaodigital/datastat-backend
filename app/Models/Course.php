@@ -108,11 +108,11 @@ class Course extends Model
             $filename = basename($this->image_path);
 
             // New public path for course images
-            return 'https://datastatresearch.org/images/courses/' . $filename;
+            return 'https://datastatresearch.com/images/courses/' . $filename;
         }
 
         // Default image path in the new images/courses directory
-        return 'https://datastatresearch.org/images/courses/default-course.jpg';
+        return 'https://datastatresearch.com/images/courses/default-course.jpg';
     }
 
     public function getCourseImagesAttribute(): ?string

@@ -51,7 +51,7 @@ class CoursePdfController extends Controller
             'site_name' => config('app.name', 'DataStat Research'),
             'address' => "College House, Along University Way\nNairobi, Kenya",
             'phones' => ['+254 724 527 104', '+254 734 969 612'],
-            'email' => 'info@datastatresearch.org',
+            'email' => 'info@datastatresearch.com',
             'website' => config('app.url', ''),
         ];
 
