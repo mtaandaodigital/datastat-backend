@@ -48,6 +48,8 @@ class UserResource extends Resource
                             ->email()
                             ->required()
                             ->unique(User::class, 'email', ignoreRecord: true)
+                            ->afterStateHydrated(fn (Forms\Components\TextInput $component, ?string $state): mixed => $component->state($state === null ? null : trim($state)))
+                            ->dehydrateStateUsing(fn (?string $state): ?string => $state === null ? null : trim($state))
                             ->maxLength(255),
                         
                         Forms\Components\Grid::make(2)
@@ -84,7 +86,7 @@ class UserResource extends Resource
                             ->same('password')
                             ->dehydrated(false),
                     ])
-                    ->visible(fn () => auth()->user()->isSuperAdmin()),
+                    ->visible(fn () => self::currentUserIsSuperAdmin()),
 
                 Forms\Components\Section::make('Permissions & Access')
                     ->schema([
@@ -118,7 +120,7 @@ class UserResource extends Resource
                                     ->default(0),
                             ]),
                     ])
-                    ->visible(fn () => auth()->user()->isSuperAdmin()),
+                    ->visible(fn () => self::currentUserIsSuperAdmin()),
             ]);
     }
 
@@ -247,18 +249,18 @@ class UserResource extends Resource
                             ->success()
                             ->send();
                     })
-                    ->visible(fn () => auth()->user()->isSuperAdmin()),
+                    ->visible(fn () => self::currentUserIsSuperAdmin()),
                 
                 Tables\Actions\DeleteAction::make()
-                    ->visible(fn (User $record) => 
-                        auth()->user()->isSuperAdmin() && 
-                        $record->usermanagementid !== auth()->user()->usermanagementid
+                    ->visible(fn (User $record) =>
+                        self::currentUserIsSuperAdmin() &&
+                        $record->usermanagementid !== auth()->id()
                     ),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make()
-                        ->visible(fn () => auth()->user()->isSuperAdmin()),
+                        ->visible(fn () => self::currentUserIsSuperAdmin()),
                     
                     Tables\Actions\BulkAction::make('activate')
                         ->label('Activate Selected')
@@ -273,7 +275,7 @@ class UserResource extends Resource
                                 ]);
                             });
                         })
-                        ->visible(fn () => auth()->user()->isSuperAdmin()),
+                        ->visible(fn () => self::currentUserIsSuperAdmin()),
                     
                     Tables\Actions\BulkAction::make('deactivate')
                         ->label('Deactivate Selected')
@@ -287,7 +289,7 @@ class UserResource extends Resource
                                 ]);
                             });
                         })
-                        ->visible(fn () => auth()->user()->isSuperAdmin()),
+                        ->visible(fn () => self::currentUserIsSuperAdmin()),
                 ]),
             ])
             ->defaultSort('usermanagementid', 'desc')
@@ -405,6 +407,13 @@ class UserResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return auth()->user()->isSuperAdmin();
+        return self::currentUserIsSuperAdmin();
+    }
+
+    private static function currentUserIsSuperAdmin(): bool
+    {
+        $user = auth()->user();
+
+        return $user instanceof User && $user->isSuperAdmin();
     }
 }
