@@ -61,6 +61,8 @@ class UserResource extends Resource
 
                                 Forms\Components\TextInput::make('location')
                                     ->label('Organization')
+                                    ->afterStateHydrated(fn (Forms\Components\TextInput $component, ?string $state): mixed => $component->state($state ?? ''))
+                                    ->dehydrateStateUsing(fn (?string $state): string => trim($state ?? ''))
                                     ->maxLength(255),
                             ]),
                     ]),
