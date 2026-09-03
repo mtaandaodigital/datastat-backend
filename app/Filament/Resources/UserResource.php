@@ -48,6 +48,8 @@ class UserResource extends Resource
                             ->email()
                             ->required()
                             ->unique(User::class, 'email', ignoreRecord: true)
+                            ->afterStateHydrated(fn (Forms\Components\TextInput $component, ?string $state): mixed => $component->state($state === null ? null : trim($state)))
+                            ->dehydrateStateUsing(fn (?string $state): ?string => $state === null ? null : trim($state))
                             ->maxLength(255),
                         
                         Forms\Components\Grid::make(2)
