@@ -44,7 +44,7 @@ return [
         // Category images directory on main site
         'main_site_category' => [
             'driver' => 'local',
-            'root' => '/website/public/images/category',
+            'root' => '../website/public/images/category',
             'url' => 'https://datastatresearch.org/images/category',
             'visibility' => 'public',
             'throw' => false,
