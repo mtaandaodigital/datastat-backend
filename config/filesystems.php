@@ -35,8 +35,8 @@ return [
         // Main site uploads directory
         'main_site_uploads' => [
             'driver' => 'local',
-            'root' => '/home/datasta/website/public/images/courses',
-            'url' => 'https://datastatresearch.org/images/courses',
+            'root' => env('MAIN_SITE_UPLOADS_PATH', base_path('../website/public/images/courses')),
+            'url' => env('MAIN_SITE_UPLOADS_URL', 'https://datastatresearch.org/images/courses'),
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -44,7 +44,7 @@ return [
         // Category images directory on main site
         'main_site_category' => [
             'driver' => 'local',
-            'root' => '/home/datasta/website/public/images/category',
+            'root' => '/website/public/images/category',
             'url' => 'https://datastatresearch.org/images/category',
             'visibility' => 'public',
             'throw' => false,
